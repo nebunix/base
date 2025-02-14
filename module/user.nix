@@ -1,10 +1,25 @@
-{ systemInformation, ... }:
-
 {
+  config,
+  lib,
+  systemInformation,
+  ...
+}:
+
+let
+  cfg = config.nebunix.user;
+in
+{
+  options.nebunix.user = {
+    fullName = lib.mkOption {
+      type = with lib.types; str;
+      description = "The full name of the user.";
+    };
+  };
+
   config = {
-    users.users."${systemInformation.user.userName}" = {
+    users.users."${systemInformation.userName}" = {
       isNormalUser = true;
-      description = systemInformation.user.fullName;
+      description = cfg.fullName;
       extraGroups = [
         "networkmanager"
         "wheel"
