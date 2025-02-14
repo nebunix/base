@@ -22,7 +22,7 @@
       { ... }:
       {
         home.userName = systemInformation.userName;
-        home.userDirectory = "/home/${systemInformation.userName}";
+        home.homeDirectory = "/home/${systemInformation.userName}";
         programs.home-manager.enable = true;
         home.stateVersion = "24.11";
       };
