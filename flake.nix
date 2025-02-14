@@ -5,7 +5,7 @@
     { ... }:
     {
       nixosModules = {
-        base = import ./module;
+        default = import ./module;
       };
     };
 }
