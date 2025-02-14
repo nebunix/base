@@ -21,7 +21,7 @@
     home-manager.users."${systemInformation.userName}" =
       { ... }:
       {
-        home.userName = systemInformation.userName;
+        home.username = systemInformation.userName;
         home.homeDirectory = "/home/${systemInformation.userName}";
         programs.home-manager.enable = true;
         home.stateVersion = "24.11";
