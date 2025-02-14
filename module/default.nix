@@ -17,5 +17,14 @@
     ];
 
     system.stateVersion = "24.11";
+
+    home-manager.users."${systemInformation.userName}" =
+      { ... }:
+      {
+        home.userName = systemInformation.userName;
+        home.userDirectory = "/home/${systemInformation.userName}";
+        programs.home-manager.enable = true;
+        home.stateVersion = "24.11";
+      };
   };
 }
