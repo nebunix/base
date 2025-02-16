@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, systemInformation, ... }:
 
 
 let
@@ -10,6 +10,12 @@ in
       type = with lib.types; str;
       default = "monospace";
       description = "The monospace font to use.";
+    };
+  };
+
+  config = {
+    home-manager.users."${systemInformation.userName}" = { ... }: {
+      programs.kitty.settings.font_family = cfg.monospaceFont;
     };
   };
 }
