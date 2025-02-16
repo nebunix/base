@@ -1,5 +1,9 @@
-{ config, lib, systemInformation, ... }:
-
+{
+  config,
+  lib,
+  systemInformation,
+  ...
+}:
 
 let
   cfg = config.nebunix.fonts;
@@ -14,8 +18,10 @@ in
   };
 
   config = {
-    home-manager.users."${systemInformation.userName}" = { ... }: {
-      programs.kitty.settings.font_family = cfg.monospaceFont;
-    };
+    home-manager.users."${systemInformation.userName}" =
+      { ... }:
+      {
+        programs.kitty.settings.font_family = cfg.monospaceFont;
+      };
   };
 }
