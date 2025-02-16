@@ -3,6 +3,7 @@
 {
   imports = [
     ./bootloader.nix
+    ./default-programs.nix
     ./fonts.nix
     ./localization.nix
     ./networking.nix
