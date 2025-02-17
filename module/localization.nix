@@ -42,15 +42,5 @@ in
     console.keyMap = cfg.consoleKeyMap;
     time.timeZone = cfg.timeZone;
     i18n.defaultLocale = cfg.locale;
-
-    services.xserver.xkb = {
-      layout = cfg.xkb.layout;
-      variant = cfg.xkb.variant;
-    };
-
-    environment.sessionVariables = {
-      XKB_DEFAULT_LAYOUT = cfg.xkb.layout;
-      XKB_DEFAULT_VARIANT = cfg.xkb.variant;
-    };
   };
 }
