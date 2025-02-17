@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./bluetooth.nix
     ./bootloader.nix
     ./default-programs.nix
     ./fonts.nix
